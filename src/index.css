@@ -1,0 +1,138 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 0 0% 7%;
+    --foreground: 45 100% 70%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 45 100% 51%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 45 100% 70%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 60%;
+
+    --accent: 0 84% 50%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 45 100% 51%;
+
+    --radius: 0.25rem;
+
+    /* Lamborghini-specific colors */
+    --lambo-yellow: 45 100% 51%;
+    --lambo-gold: 43 96% 56%;
+    --lambo-black: 0 0% 7%;
+    --lambo-gray: 0 0% 15%;
+    --lambo-red: 0 84% 50%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 7%) 0%, hsl(0 0% 15%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(45 100% 51%) 0%, hsl(43 96% 56%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 10%) 0%, hsl(0 0% 7%) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 40px hsl(45 100% 51% / 0.3);
+    --shadow-card: 0 10px 30px hsl(0 0% 0% / 0.5);
+    --shadow-intense: 0 20px 60px hsl(45 100% 51% / 0.2);
+    
+    /* Animations */
+    --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-[hsl(45,100%,51%)] to-[hsl(43,96%,56%)];
+  }
+  
+  .card-3d {
+    transform-style: preserve-3d;
+    transition: var(--transition-smooth);
+  }
+  
+  .card-3d:hover {
+    transform: translateY(-10px) rotateX(5deg) scale(1.02);
+  }
+  
+  .glow-text {
+    text-shadow: 0 0 20px hsl(45 100% 51% / 0.5);
+  }
+  
+  .bg-carbon {
+    background-image: 
+      repeating-linear-gradient(
+        0deg,
+        hsl(0 0% 10%),
+        hsl(0 0% 10%) 2px,
+        hsl(0 0% 8%) 2px,
+        hsl(0 0% 8%) 4px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        hsl(0 0% 10%),
+        hsl(0 0% 10%) 2px,
+        hsl(0 0% 8%) 2px,
+        hsl(0 0% 8%) 4px
+      );
+  }
+  
+  .clip-angle {
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+  }
+
+  /* Page fade-in animation for route changes */
+  .animate-fade-in {
+    animation: fade-in 400ms ease-out both;
+  }
+
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* Subtle floating for scroll indicator */
+  .animate-float {
+    animation: float 2.5s ease-in-out infinite;
+  }
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+}
