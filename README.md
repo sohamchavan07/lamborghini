@@ -60,6 +60,19 @@ This project is built with:
 - shadcn-ui
 - Tailwind CSS
 
+## Interactive 3D Models
+
+Experience Lamborghini models in-browser with embedded, interactive 3D viewers.
+
+- **Available models**: Aventador SVJ, Revuelto, Countach (1989), Sián, Huracán
+- **Where to find**: Visit the homepage and scroll to the "3D MODELS" section, or open `/#three-d` while the app is running (e.g., `http://localhost:5173/#three-d`).
+- **How to interact**:
+  - **Orbit**: Click-drag to rotate
+  - **Pan**: Right-click drag (or two-finger drag on trackpad)
+  - **Zoom**: Mouse wheel or pinch
+  - **Fullscreen/XR**: Use the controls in the viewer
+- **Notes**: 3D viewers stream from Sketchfab; initial load depends on your network and may use more GPU resources than static images.
+
 ## How can I deploy this project?
 
 Simply open [Lovable](https://lovable.dev/projects/0a9e2a58-1f5e-494a-9fa1-85144c4bd2c4) and click on Share -> Publish.
