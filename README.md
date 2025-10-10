@@ -65,3 +65,9 @@ Experience Lamborghini models in-browser with embedded, interactive 3D viewers.
   - **Zoom**: Mouse wheel or pinch
   - **Fullscreen/XR**: Use the controls in the viewer
 - **Notes**: 3D viewers stream from Sketchfab; initial load depends on your network and may use more GPU resources than static images.
+
+
+
+
+
+![giphy](https://github.com/user-attachments/assets/d56c5be0-9450-45cd-91c8-814077839460)
