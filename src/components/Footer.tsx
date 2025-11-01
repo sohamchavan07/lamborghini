@@ -14,8 +14,19 @@ export const Footer = () => {
           <div>Educational Purpose</div>
         </div>
         <div className="mt-6 sm:mt-8 text-xs text-muted-foreground max-w-4xl mx-auto px-2">
-          All Lamborghini trademarks and logos are property of Automobili Lamborghini S.p.A.
-        </div>
+       <p>
+            &copy; Made by{" "}
+            <a
+              href="https://www.sohamchavan.site"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Soham Chavan website"
+              className="text-yellow-600 hover:text-yellow-500 font-semibold hover:underline focus:outline-none focus:ring-2 focus:ring-yellow-300"
+            >
+              SOHAM
+            </a>
+            .
+          </p>        </div>
       </div>
     </footer>
   );
